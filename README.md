@@ -114,9 +114,22 @@ The script is divided into clear sections:
 9. Final summary table
 
 ## 4. Statistical Test (Python)
+After calculating conversion rates and lift in SQL, I used a short Python script to perform a formal statistical test and confirm that the observed difference is not due to chance.
+
+The script takes the exact converted / not-converted counts produced by the SQL analysis (Section 5) and feeds them into a **chi-square test of independence** (`scipy.stats.chi2_contingency`). This test evaluates whether the conversion rates of the `ad` and `psa` groups are significantly different.
+
 ```python
  python statistical_test.py
 ```
+
+**Key outputs from the script:**
+- Chi-square statistic
+- p-value
+- A clear statement of statistical significance
+
+The test returned a very small p-value (p ≪ 0.001), confirming that the higher conversion rate in the ad group is statistically significant.
+
+A screenshot of the script output is shown below:
 
 ![Statistical Test](images/screenshot_statistical_test.png)
 
