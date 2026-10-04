@@ -154,7 +154,7 @@ Conclusion: The difference is statistically significant. Showing the advertiseme
 
 Author
 
-[Mathyas]
+Mathyas
 
 Data Analyst
 
